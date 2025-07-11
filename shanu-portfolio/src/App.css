@@ -1,0 +1,41 @@
+/* Remove conflicting styles and keep only essential ones */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom animations for portfolio */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.2s both;
+  }
+  
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.4s both;
+  }
+  
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.8s ease-out 0.6s both;
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
