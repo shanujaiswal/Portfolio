@@ -1,6 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FileText, Send, ArrowLeft, Menu, X, Sun, Moon } from 'lucide-react';
 
+// Logo Component - Professional Portfolio Logo
+const Logo = ({ className = "w-8 h-8" }) => (
+  <svg 
+    className={className} 
+    viewBox="0 0 32 32" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Background circle with gradient */}
+    <circle cx="16" cy="16" r="15" fill="url(#gradient)" stroke="currentColor" strokeWidth="1.5"/>
+    
+    {/* Code brackets representing software development */}
+    <path 
+      d="M10 12L14 16L10 20" 
+      stroke="white" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    />
+    <path 
+      d="M22 12L18 16L22 20" 
+      stroke="white" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    />
+    
+    {/* Checkmark representing quality assurance */}
+    <path 
+      d="M12 14L15 17L20 12" 
+      stroke="white" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      opacity="0.9"
+    />
+    
+    {/* Small dots representing code/technology */}
+    <circle cx="16" cy="8" r="1" fill="white" opacity="0.7"/>
+    <circle cx="16" cy="24" r="1" fill="white" opacity="0.7"/>
+    <circle cx="8" cy="16" r="1" fill="white" opacity="0.7"/>
+    <circle cx="24" cy="16" r="1" fill="white" opacity="0.7"/>
+    
+    {/* Gradient definition */}
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#3B82F6"/>
+        <stop offset="50%" stopColor="#8B5CF6"/>
+        <stop offset="100%" stopColor="#EC4899"/>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 const Portfolio = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -112,12 +166,13 @@ const Portfolio = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <div 
-              className="text-2xl font-bold text-black dark:text-white cursor-pointer transition-colors duration-200 hover:text-blue-600 hover:bg-blue-100 dark:hover:bg-blue-900 rounded-xl px-2 py-1"
+              className="flex items-center space-x-3 cursor-pointer transition-colors duration-200 hover:text-blue-600 hover:bg-blue-100 dark:hover:bg-blue-900 rounded-xl px-2 py-1"
               onClick={() => navigateTo('home')}
             >
-              Shanu Jaiswal
+              <Logo className="w-8 h-8 text-blue-600" />
+              <span className="text-2xl font-bold text-black dark:text-white">Shanu Jaiswal</span>
             </div>
           </div>
           
